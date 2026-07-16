@@ -1,0 +1,2403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JavaScript Tutorial for Beginners | DevNova</title>
+
+<meta name="description"
+content="Learn JavaScript from beginner to advanced with examples, DOM manipulation, events, ES6, projects, exercises, interview questions and quizzes.">
+
+<meta name="keywords"
+content="JavaScript Tutorial, Learn JavaScript, JS, ES6, DOM, Web Development">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/dark.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="container">
+
+<a href="../index.html" class="logo">
+
+<span>Dev</span>Nova
+
+</a>
+
+<nav class="navbar">
+
+<ul class="nav-links">
+
+<li><a href="../index.html">Home</a></li>
+
+<li><a href="index.html" class="active">Tutorials</a></li>
+
+<li><a href="../tools/index.html">Tools</a></li>
+
+<li><a href="../blog/index.html">Blog</a></li>
+
+<li><a href="../about.html">About</a></li>
+
+<li><a href="../contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<div class="nav-actions">
+
+<button class="icon-btn" id="theme-toggle">🌙</button>
+
+<button class="menu-btn">☰</button>
+
+</div>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="hero">
+
+<div class="container">
+
+<span class="hero-badge">
+
+⚡ Beginner Course
+
+</span>
+
+<h1>
+
+Complete JavaScript Tutorial
+
+</h1>
+
+<p>
+
+Learn JavaScript from scratch with beginner-friendly lessons,
+interactive examples, projects, quizzes, interview questions,
+and modern ES6 features.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>What is JavaScript?</h2>
+
+<p>
+
+JavaScript is a programming language that makes websites interactive.
+It allows you to create dynamic web pages, validate forms, update
+content without reloading the page, create animations, and build
+complete web applications.
+
+</p>
+
+<p>
+
+JavaScript is one of the three core technologies of the web:
+
+</p>
+
+<ul>
+
+<li>HTML — Structure</li>
+
+<li>CSS — Styling</li>
+
+<li>JavaScript — Functionality</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!--========================
+LESSON 1
+=========================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 1</span>
+
+<h2>Adding JavaScript</h2>
+
+</div>
+
+<p>
+
+JavaScript can be added in three different ways.
+
+</p>
+
+<h3>Inline JavaScript</h3>
+
+<pre class="code-card"><code>&lt;button onclick="alert('Hello!')"&gt;
+
+Click Me
+
+&lt;/button&gt;
+</code></pre>
+
+<h3>Internal JavaScript</h3>
+
+<pre class="code-card"><code>&lt;script&gt;
+
+console.log("Hello World");
+
+&lt;/script&gt;
+</code></pre>
+
+<h3>External JavaScript (Recommended)</h3>
+
+<pre class="code-card"><code>&lt;script src="script.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<p>
+
+Using an external JavaScript file keeps your code organized and easier
+to maintain.
+
+</p>
+
+</div>
+
+</section>
+
+<!--========================
+LESSON 2
+=========================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 2</span>
+
+<h2>Variables</h2>
+
+</div>
+
+<p>
+
+Variables are used to store information that can be reused later in your
+program.
+
+</p>
+
+<pre class="code-card"><code>let name = "DevNova";
+
+const year = 2026;
+
+var message = "Hello";
+</code></pre>
+
+<h3>Variable Keywords</h3>
+
+<ul>
+
+<li><strong>let</strong> — Block scoped and can be updated.</li>
+
+<li><strong>const</strong> — Block scoped and cannot be reassigned.</li>
+
+<li><strong>var</strong> — Function scoped (older syntax, generally avoided in new code).</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 3 - DATA TYPES
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 3</span>
+
+<h2>JavaScript Data Types</h2>
+
+</div>
+
+<p>
+
+JavaScript supports several built-in data types for storing different
+kinds of information.
+
+</p>
+
+<pre class="code-card"><code>let name = "John";
+
+let age = 20;
+
+let isStudent = true;
+
+let city = null;
+
+let score;
+
+let person = {
+
+name:"John",
+
+age:20
+
+};
+
+let colors = ["Red","Blue","Green"];
+</code></pre>
+
+<h3>Primitive Data Types</h3>
+
+<ul>
+
+<li>String</li>
+
+<li>Number</li>
+
+<li>Boolean</li>
+
+<li>Undefined</li>
+
+<li>Null</li>
+
+<li>BigInt</li>
+
+<li>Symbol</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 4 - OPERATORS
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 4</span>
+
+<h2>JavaScript Operators</h2>
+
+</div>
+
+<p>
+
+Operators perform calculations and comparisons.
+
+</p>
+
+<pre class="code-card"><code>let a = 10;
+
+let b = 5;
+
+console.log(a+b);
+
+console.log(a-b);
+
+console.log(a*b);
+
+console.log(a/b);
+
+console.log(a%b);
+</code></pre>
+
+<h3>Operator Categories</h3>
+
+<ul>
+
+<li>Arithmetic (+ - * / %)</li>
+
+<li>Assignment (= += -=)</li>
+
+<li>Comparison (== === != > <)</li>
+
+<li>Logical (&& || !)</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 5 - IF ELSE
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 5</span>
+
+<h2>Conditional Statements</h2>
+
+</div>
+
+<p>
+
+Conditional statements execute code based on a condition.
+
+</p>
+
+<pre class="code-card"><code>let age = 18;
+
+if(age >= 18){
+
+console.log("Adult");
+
+}else{
+
+console.log("Minor");
+
+}
+</code></pre>
+
+<h3>Conditional Statements</h3>
+
+<ul>
+
+<li>if</li>
+
+<li>else</li>
+
+<li>else if</li>
+
+<li>switch</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 6 - LOOPS
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 6</span>
+
+<h2>Loops</h2>
+
+</div>
+
+<p>
+
+Loops repeat a block of code multiple times.
+
+</p>
+
+<pre class="code-card"><code>for(let i=1;i<=5;i++){
+
+console.log(i);
+
+}
+</code></pre>
+
+<pre class="code-card"><code>let i=1;
+
+while(i<=5){
+
+console.log(i);
+
+i++;
+
+}
+</code></pre>
+
+<h3>Common Loops</h3>
+
+<ul>
+
+<li>for</li>
+
+<li>while</li>
+
+<li>do...while</li>
+
+<li>for...of</li>
+
+<li>for...in</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 7 - FUNCTIONS
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 7</span>
+
+<h2>Functions</h2>
+
+</div>
+
+<p>
+
+Functions group reusable code into a single block.
+
+</p>
+
+<pre class="code-card"><code>function greet(name){
+
+return "Hello " + name;
+
+}
+
+console.log(greet("DevNova"));
+</code></pre>
+
+<h3>Function Benefits</h3>
+
+<ul>
+
+<li>Reusable code</li>
+
+<li>Easier maintenance</li>
+
+<li>Cleaner programs</li>
+
+<li>Improved readability</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 8 - ARROW FUNCTIONS
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 8</span>
+
+<h2>Arrow Functions (ES6)</h2>
+
+</div>
+
+<p>
+
+Arrow functions provide a shorter syntax for writing functions.
+
+</p>
+
+<pre class="code-card"><code>const add = (a,b)=>{
+
+return a+b;
+
+};
+
+console.log(add(5,3));
+</code></pre>
+
+<p>
+
+Arrow functions are commonly used in modern JavaScript applications,
+especially with array methods and frameworks like React.
+
+</p>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 9 - ARRAYS
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 9</span>
+
+<h2>JavaScript Arrays</h2>
+
+</div>
+
+<p>
+
+An array stores multiple values in a single variable.
+
+</p>
+
+<pre class="code-card"><code>const languages = [
+
+"HTML",
+
+"CSS",
+
+"JavaScript",
+
+"Python"
+
+];
+
+console.log(languages[0]);
+
+console.log(languages.length);
+</code></pre>
+
+<h3>Common Array Methods</h3>
+
+<ul>
+
+<li>push()</li>
+
+<li>pop()</li>
+
+<li>shift()</li>
+
+<li>unshift()</li>
+
+<li>includes()</li>
+
+<li>indexOf()</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 10 - OBJECTS
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 10</span>
+
+<h2>JavaScript Objects</h2>
+
+</div>
+
+<p>
+
+Objects store related data using key-value pairs.
+
+</p>
+
+<pre class="code-card"><code>const student = {
+
+name:"John",
+
+age:20,
+
+course:"Web Development"
+
+};
+
+console.log(student.name);
+
+console.log(student.course);
+</code></pre>
+
+<p>
+
+Objects are widely used for storing structured data.
+
+</p>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 11 - STRING METHODS
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 11</span>
+
+<h2>String Methods</h2>
+
+</div>
+
+<p>
+
+JavaScript provides useful methods for working with text.
+
+</p>
+
+<pre class="code-card"><code>let text = "Hello DevNova";
+
+console.log(text.length);
+
+console.log(text.toUpperCase());
+
+console.log(text.toLowerCase());
+
+console.log(text.includes("Dev"));
+
+console.log(text.replace("Hello","Welcome"));
+</code></pre>
+
+<h3>Useful Methods</h3>
+
+<ul>
+
+<li>length</li>
+
+<li>toUpperCase()</li>
+
+<li>toLowerCase()</li>
+
+<li>trim()</li>
+
+<li>replace()</li>
+
+<li>includes()</li>
+
+<li>slice()</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 12 - ARRAY METHODS
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 12</span>
+
+<h2>Useful Array Methods</h2>
+
+</div>
+
+<p>
+
+Modern JavaScript includes powerful methods for working with arrays.
+
+</p>
+
+<pre class="code-card"><code>const numbers = [1,2,3,4,5];
+
+numbers.forEach(num => console.log(num));
+
+const doubled = numbers.map(num => num * 2);
+
+const even = numbers.filter(num => num % 2 === 0);
+
+console.log(doubled);
+
+console.log(even);
+</code></pre>
+
+<h3>Popular Methods</h3>
+
+<ul>
+
+<li>forEach()</li>
+
+<li>map()</li>
+
+<li>filter()</li>
+
+<li>find()</li>
+
+<li>reduce()</li>
+
+<li>sort()</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 13 - DOM
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 13</span>
+
+<h2>Introduction to the DOM</h2>
+
+</div>
+
+<p>
+
+The DOM (Document Object Model) represents the HTML page as objects that
+JavaScript can access and modify.
+
+</p>
+
+<pre class="code-card"><code>document.body.style.background = "#f4f4f4";
+</code></pre>
+
+<p>
+
+Using the DOM, JavaScript can update content, styles, and page structure
+without reloading the page.
+
+</p>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 14 - SELECTING ELEMENTS
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 14</span>
+
+<h2>Selecting HTML Elements</h2>
+
+</div>
+
+<p>
+
+Before changing an element, JavaScript must first select it.
+
+</p>
+
+<pre class="code-card"><code>document.getElementById("title");
+
+document.getElementsByClassName("card");
+
+document.querySelector(".btn");
+
+document.querySelectorAll("p");
+</code></pre>
+
+<h3>Selection Methods</h3>
+
+<ul>
+
+<li>getElementById()</li>
+
+<li>getElementsByClassName()</li>
+
+<li>getElementsByTagName()</li>
+
+<li>querySelector()</li>
+
+<li>querySelectorAll()</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 15 - CHANGING CONTENT
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 15</span>
+
+<h2>Changing HTML Content</h2>
+
+</div>
+
+<p>
+
+JavaScript can update webpage content dynamically.
+
+</p>
+
+<pre class="code-card"><code>const heading = document.querySelector("h1");
+
+heading.textContent = "Welcome to DevNova";
+
+heading.style.color = "#2563eb";
+</code></pre>
+
+<p>
+
+This technique is commonly used for interactive applications and live
+content updates.
+
+</p>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 16 - EVENTS
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 16</span>
+
+<h2>JavaScript Events</h2>
+
+</div>
+
+<p>
+
+Events allow JavaScript to respond to user actions such as clicking a
+button, typing in a form, or moving the mouse.
+
+</p>
+
+<pre class="code-card"><code>const button = document.querySelector("#btn");
+
+button.addEventListener("click", function(){
+
+alert("Button Clicked!");
+
+});
+</code></pre>
+
+<h3>Common Events</h3>
+
+<ul>
+
+<li>click</li>
+
+<li>dblclick</li>
+
+<li>mouseover</li>
+
+<li>mouseout</li>
+
+<li>keydown</li>
+
+<li>keyup</li>
+
+<li>submit</li>
+
+<li>change</li>
+
+<li>input</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 17 - FORM VALIDATION
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 17</span>
+
+<h2>Form Validation</h2>
+
+</div>
+
+<p>
+
+Form validation ensures that users enter valid data before submitting a
+form.
+
+</p>
+
+<pre class="code-card"><code>const form = document.querySelector("#signup");
+
+form.addEventListener("submit", function(event){
+
+const name = document.querySelector("#name").value;
+
+if(name === ""){
+
+event.preventDefault();
+
+alert("Name is required.");
+
+}
+
+});
+</code></pre>
+
+<p>
+
+Validation improves user experience and helps prevent incorrect data from
+being submitted.
+
+</p>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 18 - SETTIMEOUT
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 18</span>
+
+<h2>setTimeout()</h2>
+
+</div>
+
+<p>
+
+The <strong>setTimeout()</strong> function runs code once after a specified
+delay.
+
+</p>
+
+<pre class="code-card"><code>setTimeout(function(){
+
+console.log("Hello after 3 seconds");
+
+},3000);
+</code></pre>
+
+<p>
+
+This function is useful for notifications, delayed actions, and loading
+effects.
+
+</p>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 19 - SETINTERVAL
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 19</span>
+
+<h2>setInterval()</h2>
+
+</div>
+
+<p>
+
+The <strong>setInterval()</strong> function repeatedly runs code at a fixed
+time interval.
+
+</p>
+
+<pre class="code-card"><code>setInterval(function(){
+
+console.log("Running...");
+
+},1000);
+</code></pre>
+
+<p>
+
+Use <strong>clearInterval()</strong> to stop a repeating interval when it is
+no longer needed.
+
+</p>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 20 - ES6 FEATURES
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 20</span>
+
+<h2>Modern JavaScript (ES6)</h2>
+
+</div>
+
+<p>
+
+ES6 introduced many powerful features that simplify JavaScript
+development.
+
+</p>
+
+<h3>Popular ES6 Features</h3>
+
+<ul>
+
+<li>let and const</li>
+
+<li>Arrow Functions</li>
+
+<li>Template Literals</li>
+
+<li>Destructuring</li>
+
+<li>Spread Operator</li>
+
+<li>Rest Parameters</li>
+
+<li>Default Parameters</li>
+
+<li>Modules</li>
+
+<li>Classes</li>
+
+<li>Promises</li>
+
+</ul>
+
+<pre class="code-card"><code>const name = "DevNova";
+
+console.log(`Welcome ${name}!`);
+</code></pre>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 21 - DESTRUCTURING
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 21</span>
+
+<h2>Destructuring</h2>
+
+</div>
+
+<p>
+
+Destructuring extracts values from arrays or properties from objects into
+separate variables.
+
+</p>
+
+<pre class="code-card"><code>const person = {
+
+name:"John",
+
+age:22
+
+};
+
+const {name, age} = person;
+
+console.log(name);
+
+console.log(age);
+</code></pre>
+
+<p>
+
+Destructuring makes code shorter and easier to read.
+
+</p>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 22 - MODULES
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 22</span>
+
+<h2>JavaScript Modules</h2>
+
+</div>
+
+<p>
+
+Modules allow you to split your JavaScript code into multiple reusable
+files.
+
+</p>
+
+<pre class="code-card"><code>// math.js
+
+export function add(a,b){
+
+return a+b;
+
+}
+
+// app.js
+
+import { add } from "./math.js";
+
+console.log(add(5,3));
+</code></pre>
+
+<p>
+
+Using modules keeps projects organized and makes code easier to maintain.
+
+</p>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 23 - PROMISES
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 23</span>
+
+<h2>JavaScript Promises</h2>
+
+</div>
+
+<p>
+
+A Promise represents the eventual completion (or failure) of an
+asynchronous operation.
+
+</p>
+
+<pre class="code-card"><code>const myPromise = new Promise((resolve, reject) => {
+
+let success = true;
+
+if(success){
+
+resolve("Data loaded successfully.");
+
+}else{
+
+reject("Something went wrong.");
+
+}
+
+});
+
+myPromise
+
+.then(result => console.log(result))
+
+.catch(error => console.log(error));
+</code></pre>
+
+<p>
+
+Promises help avoid deeply nested callback functions and make asynchronous
+code easier to read.
+
+</p>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 24 - ASYNC / AWAIT
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 24</span>
+
+<h2>Async and Await</h2>
+
+</div>
+
+<p>
+
+The <strong>async</strong> and <strong>await</strong> keywords simplify
+working with asynchronous code.
+
+</p>
+
+<pre class="code-card"><code>async function loadData(){
+
+return "Welcome to DevNova";
+
+}
+
+loadData().then(data => console.log(data));
+</code></pre>
+
+<pre class="code-card"><code>async function getMessage(){
+
+const message = await loadData();
+
+console.log(message);
+
+}
+
+getMessage();
+</code></pre>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 25 - FETCH API
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 25</span>
+
+<h2>Fetch API</h2>
+
+</div>
+
+<p>
+
+The Fetch API allows JavaScript to request data from a server without
+reloading the page.
+
+</p>
+
+<pre class="code-card"><code>fetch("https://jsonplaceholder.typicode.com/posts/1")
+
+.then(response => response.json())
+
+.then(data => console.log(data))
+
+.catch(error => console.log(error));
+</code></pre>
+
+<p>
+
+The Fetch API is commonly used to retrieve data from REST APIs.
+
+</p>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 26 - JSON
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 26</span>
+
+<h2>Working with JSON</h2>
+
+</div>
+
+<p>
+
+JSON (JavaScript Object Notation) is a lightweight format used to
+exchange data between applications.
+
+</p>
+
+<pre class="code-card"><code>const user = {
+
+name:"John",
+
+age:25
+
+};
+
+const json = JSON.stringify(user);
+
+console.log(json);
+
+const obj = JSON.parse(json);
+
+console.log(obj.name);
+</code></pre>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 27 - LOCAL STORAGE
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 27</span>
+
+<h2>Local Storage</h2>
+
+</div>
+
+<p>
+
+Local Storage lets you save data in the browser so it remains available
+after the page is refreshed.
+
+</p>
+
+<pre class="code-card"><code>localStorage.setItem("username","DevNova");
+
+const user = localStorage.getItem("username");
+
+console.log(user);
+
+localStorage.removeItem("username");
+</code></pre>
+
+<p>
+
+Local Storage is useful for user preferences, themes, and small amounts
+of persistent data.
+
+</p>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 28 - ERROR HANDLING
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 28</span>
+
+<h2>Error Handling</h2>
+
+</div>
+
+<p>
+
+JavaScript errors can be handled using try...catch to prevent your
+application from crashing.
+
+</p>
+
+<pre class="code-card"><code>try{
+
+let result = 10 / 0;
+
+console.log(result);
+
+}catch(error){
+
+console.log(error);
+
+}
+</code></pre>
+
+<p>
+
+Handling errors gracefully makes applications more reliable and easier to
+debug.
+
+</p>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 29 - DEBUGGING
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 29</span>
+
+<h2>Debugging JavaScript</h2>
+
+</div>
+
+<p>
+
+Debugging is the process of finding and fixing errors in your code.
+
+</p>
+
+<pre class="code-card"><code>let total = 50;
+
+console.log(total);
+
+debugger;
+</code></pre>
+
+<h3>Useful Debugging Tools</h3>
+
+<ul>
+
+<li>console.log()</li>
+
+<li>console.table()</li>
+
+<li>console.error()</li>
+
+<li>Browser Developer Tools</li>
+
+<li>Breakpoints</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 30 - BEST PRACTICES
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 30</span>
+
+<h2>JavaScript Best Practices</h2>
+
+</div>
+
+<p>
+
+Following best practices makes your code cleaner, more maintainable, and
+easier to understand.
+
+</p>
+
+<ul>
+
+<li>Use <strong>const</strong> by default and <strong>let</strong> when values change.</li>
+
+<li>Write meaningful variable and function names.</li>
+
+<li>Keep functions small and focused on one task.</li>
+
+<li>Comment only when necessary.</li>
+
+<li>Avoid global variables.</li>
+
+<li>Handle errors using try...catch.</li>
+
+<li>Use strict equality (===) instead of ==.</li>
+
+<li>Organize code into modules.</li>
+
+<li>Test your code thoroughly.</li>
+
+<li>Keep learning modern JavaScript features.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!--==================================
+        MINI PROJECT
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Project</span>
+
+<h2>Mini Project - Digital Counter</h2>
+
+</div>
+
+<p>
+
+Let's build a simple counter application using JavaScript.
+
+</p>
+
+<pre class="code-card"><code>&lt;button onclick="increase()"&gt;+&lt;/button&gt;
+
+&lt;h2 id="count"&gt;0&lt;/h2&gt;
+
+&lt;button onclick="decrease()"&gt;-&lt;/button&gt;
+
+&lt;script&gt;
+
+let count = 0;
+
+function increase(){
+
+count++;
+
+document.getElementById("count").textContent = count;
+
+}
+
+function decrease(){
+
+count--;
+
+document.getElementById("count").textContent = count;
+
+}
+
+&lt;/script&gt;
+</code></pre>
+
+<p>
+
+This project teaches variables, functions, DOM manipulation, and events.
+
+</p>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 31 - DOM PROJECT
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 31</span>
+
+<h2>DOM Project - Change Theme</h2>
+
+</div>
+
+<p>
+
+The following example changes the webpage background color when a button
+is clicked.
+
+</p>
+
+<pre class="code-card"><code>&lt;button id="themeBtn"&gt;
+
+Toggle Theme
+
+&lt;/button&gt;
+
+&lt;script&gt;
+
+const btn = document.getElementById("themeBtn");
+
+btn.addEventListener("click",()=>{
+
+document.body.classList.toggle("dark");
+
+});
+
+&lt;/script&gt;
+</code></pre>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 32 - CODING CHALLENGES
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Practice</span>
+
+<h2>JavaScript Coding Challenges</h2>
+
+</div>
+
+<ol>
+
+<li>Create a calculator.</li>
+
+<li>Reverse a string.</li>
+
+<li>Check if a number is even or odd.</li>
+
+<li>Generate a random password.</li>
+
+<li>Create a digital clock.</li>
+
+<li>Build a to-do list.</li>
+
+<li>Create an image slider.</li>
+
+<li>Validate a registration form.</li>
+
+<li>Make a countdown timer.</li>
+
+<li>Create a weather application using an API.</li>
+
+</ol>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 33 - PRACTICE EXERCISES
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Exercises</span>
+
+<h2>Practice Exercises</h2>
+
+</div>
+
+<p>
+
+Complete the following exercises to strengthen your JavaScript skills.
+
+</p>
+
+<ul>
+
+<li>Create a variable and print it.</li>
+
+<li>Write a function that returns the square of a number.</li>
+
+<li>Loop from 1 to 100.</li>
+
+<li>Create an array of your favorite programming languages.</li>
+
+<li>Find the largest number in an array.</li>
+
+<li>Display the current date and time.</li>
+
+<li>Create a simple login validation.</li>
+
+<li>Use localStorage to save a username.</li>
+
+<li>Fetch JSON data from a public API.</li>
+
+<li>Build a responsive navigation menu.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 34 - REAL WORLD USES
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Applications</span>
+
+<h2>Real-World Uses of JavaScript</h2>
+
+</div>
+
+<p>
+
+JavaScript powers millions of websites and web applications around the
+world.
+
+</p>
+
+<div class="features-grid">
+
+<div class="feature-card">
+
+<h3>🌐 Interactive Websites</h3>
+
+<p>Create menus, sliders, and animations.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>📱 Web Applications</h3>
+
+<p>Build dashboards and productivity apps.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>🛒 E-commerce</h3>
+
+<p>Shopping carts, filters, and checkout pages.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>📊 Dashboards</h3>
+
+<p>Display live charts and analytics.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>🎮 Browser Games</h3>
+
+<p>Create interactive games directly in the browser.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>🤖 APIs</h3>
+
+<p>Connect applications with external services.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 35 - COMMON MISTAKES
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Tips</span>
+
+<h2>Common Beginner Mistakes</h2>
+
+</div>
+
+<ul>
+
+<li>Forgetting semicolons (optional but be consistent).</li>
+
+<li>Using <code>==</code> instead of <code>===</code>.</li>
+
+<li>Declaring too many global variables.</li>
+
+<li>Ignoring browser console errors.</li>
+
+<li>Not checking if an element exists before accessing it.</li>
+
+<li>Writing very long functions.</li>
+
+<li>Not testing code in different browsers.</li>
+
+<li>Copying code without understanding it.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!--==================================
+        MINI PROJECT
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Project</span>
+
+<h2>Mini Project - Digital Counter</h2>
+
+</div>
+
+<p>
+
+Let's build a simple counter application using JavaScript.
+
+</p>
+
+<pre class="code-card"><code>&lt;button onclick="increase()"&gt;+&lt;/button&gt;
+
+&lt;h2 id="count"&gt;0&lt;/h2&gt;
+
+&lt;button onclick="decrease()"&gt;-&lt;/button&gt;
+
+&lt;script&gt;
+
+let count = 0;
+
+function increase(){
+
+count++;
+
+document.getElementById("count").textContent = count;
+
+}
+
+function decrease(){
+
+count--;
+
+document.getElementById("count").textContent = count;
+
+}
+
+&lt;/script&gt;
+</code></pre>
+
+<p>
+
+This project teaches variables, functions, DOM manipulation, and events.
+
+</p>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 31 - DOM PROJECT
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Lesson 31</span>
+
+<h2>DOM Project - Change Theme</h2>
+
+</div>
+
+<p>
+
+The following example changes the webpage background color when a button
+is clicked.
+
+</p>
+
+<pre class="code-card"><code>&lt;button id="themeBtn"&gt;
+
+Toggle Theme
+
+&lt;/button&gt;
+
+&lt;script&gt;
+
+const btn = document.getElementById("themeBtn");
+
+btn.addEventListener("click",()=>{
+
+document.body.classList.toggle("dark");
+
+});
+
+&lt;/script&gt;
+</code></pre>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 32 - CODING CHALLENGES
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Practice</span>
+
+<h2>JavaScript Coding Challenges</h2>
+
+</div>
+
+<ol>
+
+<li>Create a calculator.</li>
+
+<li>Reverse a string.</li>
+
+<li>Check if a number is even or odd.</li>
+
+<li>Generate a random password.</li>
+
+<li>Create a digital clock.</li>
+
+<li>Build a to-do list.</li>
+
+<li>Create an image slider.</li>
+
+<li>Validate a registration form.</li>
+
+<li>Make a countdown timer.</li>
+
+<li>Create a weather application using an API.</li>
+
+</ol>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 33 - PRACTICE EXERCISES
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Exercises</span>
+
+<h2>Practice Exercises</h2>
+
+</div>
+
+<p>
+
+Complete the following exercises to strengthen your JavaScript skills.
+
+</p>
+
+<ul>
+
+<li>Create a variable and print it.</li>
+
+<li>Write a function that returns the square of a number.</li>
+
+<li>Loop from 1 to 100.</li>
+
+<li>Create an array of your favorite programming languages.</li>
+
+<li>Find the largest number in an array.</li>
+
+<li>Display the current date and time.</li>
+
+<li>Create a simple login validation.</li>
+
+<li>Use localStorage to save a username.</li>
+
+<li>Fetch JSON data from a public API.</li>
+
+<li>Build a responsive navigation menu.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 34 - REAL WORLD USES
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Applications</span>
+
+<h2>Real-World Uses of JavaScript</h2>
+
+</div>
+
+<p>
+
+JavaScript powers millions of websites and web applications around the
+world.
+
+</p>
+
+<div class="features-grid">
+
+<div class="feature-card">
+
+<h3>🌐 Interactive Websites</h3>
+
+<p>Create menus, sliders, and animations.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>📱 Web Applications</h3>
+
+<p>Build dashboards and productivity apps.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>🛒 E-commerce</h3>
+
+<p>Shopping carts, filters, and checkout pages.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>📊 Dashboards</h3>
+
+<p>Display live charts and analytics.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>🎮 Browser Games</h3>
+
+<p>Create interactive games directly in the browser.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>🤖 APIs</h3>
+
+<p>Connect applications with external services.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==================================
+        LESSON 35 - COMMON MISTAKES
+===================================-->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Tips</span>
+
+<h2>Common Beginner Mistakes</h2>
+
+</div>
+
+<ul>
+
+<li>Forgetting semicolons (optional but be consistent).</li>
+
+<li>Using <code>==</code> instead of <code>===</code>.</li>
+
+<li>Declaring too many global variables.</li>
+
+<li>Ignoring browser console errors.</li>
+
+<li>Not checking if an element exists before accessing it.</li>
+
+<li>Writing very long functions.</li>
+
+<li>Not testing code in different browsers.</li>
+
+<li>Copying code without understanding it.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!--==================================
+            FOOTER
+===================================-->
+
+</main>
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <!-- About -->
+            <div class="footer-column">
+
+                <h3>DevNova</h3>
+
+                <p>
+
+                    DevNova is a free programming learning platform that helps
+                    beginners and developers learn modern technologies through
+                    tutorials, projects, coding exercises, interview questions,
+                    and developer tools.
+
+                </p>
+
+            </div>
+
+            <!-- Tutorials -->
+            <div class="footer-column">
+
+                <h4>Tutorials</h4>
+
+                <ul>
+
+                    <li><a href="html.html">HTML</a></li>
+
+                    <li><a href="css.html">CSS</a></li>
+
+                    <li><a href="javascript.html">JavaScript</a></li>
+
+                    <li><a href="python.html">Python</a></li>
+
+                    <li><a href="react.html">React</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Resources -->
+            <div class="footer-column">
+
+                <h4>Resources</h4>
+
+                <ul>
+
+                    <li><a href="../blog/index.html">Blog</a></li>
+
+                    <li><a href="../tools/index.html">Developer Tools</a></li>
+
+                    <li><a href="../about.html">About</a></li>
+
+                    <li><a href="../contact.html">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Legal -->
+            <div class="footer-column">
+
+                <h4>Legal</h4>
+
+                <ul>
+
+                    <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+
+                    <li><a href="../terms.html">Terms & Conditions</a></li>
+
+                    <li><a href="../disclaimer.html">Disclaimer</a></li>
+
+                    <li><a href="../cookie-policy.html">Cookie Policy</a></li>
+
+                    <li><a href="../sitemap.html">Sitemap</a></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © 2026 DevNova. All Rights Reserved.
+
+            </p>
+
+            <p>
+
+                Made with ❤️ for programmers around the world.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!--==================================
+        JAVASCRIPT FILES
+===================================-->
+
+<script src="../js/main.js"></script>
+<script src="../js/darkmode.js"></script>
+<script src="../js/search.js"></script>
+
+</body>
+</html>
