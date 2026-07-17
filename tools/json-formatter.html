@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JSON Formatter | DevNova</title>
+
+<meta name="description"
+content="Format, validate, and beautify JSON online for free with DevNova's JSON Formatter.">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/dark.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="container">
+
+<a href="../index.html" class="logo">
+<span>Dev</span>Nova
+</a>
+
+<nav class="navbar">
+
+<ul class="nav-links">
+
+<li><a href="../index.html">Home</a></li>
+
+<li><a href="../tutorials/index.html">Tutorials</a></li>
+
+<li><a href="index.html" class="active">Tools</a></li>
+
+<li><a href="../blog/index.html">Blog</a></li>
+
+<li><a href="../about.html">About</a></li>
+
+<li><a href="../contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="hero">
+
+<div class="container">
+
+<span class="hero-badge">
+
+📄 Free Developer Tool
+
+</span>
+
+<h1>JSON Formatter</h1>
+
+<p>
+
+Format, validate, and beautify JSON instantly.
+Paste your JSON below and click Format.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="tool-card">
+
+<h2>JSON Formatter</h2>
+
+<textarea
+id="json-input"
+rows="16"
+placeholder='Paste JSON here...'></textarea>
+
+<br><br>
+
+<button
+class="btn primary-btn"
+id="format-btn">
+
+Format JSON
+
+</button>
+
+<button
+class="btn secondary-btn"
+id="copy-btn">
+
+Copy
+
+</button>
+
+<button
+class="btn secondary-btn"
+id="clear-btn">
+
+Clear
+
+</button>
+
+<br><br>
+
+<textarea
+id="json-output"
+rows="16"
+readonly
+placeholder="Formatted JSON will appear here..."></textarea>
+
+<p id="status"></p>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==================================
+        INFORMATION
+===================================-->
+
+<section>
+
+<div class="container">
+
+<h2>What is JSON?</h2>
+
+<p>
+
+JSON (JavaScript Object Notation) is a lightweight data-interchange format
+used by websites, APIs, and applications. Formatting JSON makes it easier
+to read and debug.
+
+</p>
+
+<div class="features-grid">
+
+<div class="feature-card">
+
+<h3>✅ Validate JSON</h3>
+
+<p>Quickly detect syntax errors in your JSON.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>✨ Beautify</h3>
+
+<p>Indent JSON automatically for better readability.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>📋 Copy</h3>
+
+<p>Copy formatted JSON with one click.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>⚡ Fast</h3>
+
+<p>Everything runs directly in your browser.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+<div class="container">
+
+<p>© 2026 DevNova. All Rights Reserved.</p>
+
+</div>
+
+</footer>
+
+<script>
+
+const input = document.getElementById("json-input");
+
+const output = document.getElementById("json-output");
+
+const status = document.getElementById("status");
+
+const formatBtn = document.getElementById("format-btn");
+
+const copyBtn = document.getElementById("copy-btn");
+
+const clearBtn = document.getElementById("clear-btn");
+
+/* Format JSON */
+
+formatBtn.addEventListener("click", () => {
+
+    try {
+
+        const parsed = JSON.parse(input.value);
+
+        output.value = JSON.stringify(parsed, null, 4);
+
+        status.style.color = "green";
+
+        status.textContent = "✔ Valid JSON";
+
+    }
+
+    catch(error){
+
+        output.value = "";
+
+        status.style.color = "red";
+
+        status.textContent = "✖ Invalid JSON";
+
+    }
+
+});
+
+/* Copy */
+
+copyBtn.addEventListener("click", () => {
+
+    if(output.value === "") return;
+
+    navigator.clipboard.writeText(output.value);
+
+    copyBtn.textContent = "Copied!";
+
+    setTimeout(()=>{
+
+        copyBtn.textContent = "Copy";
+
+    },1500);
+
+});
+
+/* Clear */
+
+clearBtn.addEventListener("click", () => {
+
+    input.value = "";
+
+    output.value = "";
+
+    status.textContent = "";
+
+});
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>QR Code Generator | DevNova</title>
+
+<meta name="description"
+content="Generate QR Codes online for free using DevNova's QR Code Generator.">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/dark.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="container">
+
+<a href="../index.html" class="logo">
+<span>Dev</span>Nova
+</a>
+
+<nav class="navbar">
+
+<ul class="nav-links">
+
+<li><a href="../index.html">Home</a></li>
+
+<li><a href="../tutorials/index.html">Tutorials</a></li>
+
+<li><a href="index.html" class="active">Tools</a></li>
+
+<li><a href="../blog/index.html">Blog</a></li>
+
+<li><a href="../about.html">About</a></li>
+
+<li><a href="../contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="hero">
+
+<div class="container">
+
+<span class="hero-badge">
+📱 Free Developer Tool
+</span>
+
+<h1>QR Code Generator</h1>
+
+<p>
+
+Generate QR codes instantly for URLs, text, phone numbers,
+Wi-Fi credentials, and more.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="tool-card">
+
+<h2>Create QR Code</h2>
+
+<input
+type="text"
+id="qr-input"
+placeholder="Enter text or URL...">
+
+<br><br>
+
+<button
+class="btn primary-btn"
+id="generate-btn">
+
+Generate QR
+
+</button>
+
+<button
+class="btn secondary-btn"
+id="clear-btn">
+
+Clear
+
+</button>
+
+<br><br>
+
+<div id="qr-code"></div>
+
+<br>
+
+<a
+id="download-btn"
+class="btn secondary-btn"
+style="display:none;"
+download="devnova-qr.png">
+
+Download QR
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==================================
+        INFORMATION
+===================================-->
+
+<section>
+
+<div class="container">
+
+<h2>About QR Codes</h2>
+
+<p>
+
+QR (Quick Response) codes can store URLs, text, email addresses,
+phone numbers, Wi-Fi credentials, and other information. Scan them
+with most smartphone cameras.
+
+</p>
+
+<div class="features-grid">
+
+<div class="feature-card">
+
+<h3>⚡ Instant</h3>
+
+<p>Create QR codes in seconds.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>📱 Mobile Friendly</h3>
+
+<p>Works with Android and iPhone cameras.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>💾 Download</h3>
+
+<p>Save your generated QR code as an image.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>🆓 Free</h3>
+
+<p>No signup required.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+<div class="container">
+
+<p>
+
+© 2026 DevNova. All Rights Reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+<!-- QRCode.js Library -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+
+const input = document.getElementById("qr-input");
+
+const generateBtn = document.getElementById("generate-btn");
+
+const clearBtn = document.getElementById("clear-btn");
+
+const qrContainer = document.getElementById("qr-code");
+
+const downloadBtn = document.getElementById("download-btn");
+
+function generateQR(){
+
+    const text = input.value.trim();
+
+    qrContainer.innerHTML = "";
+
+    downloadBtn.style.display = "none";
+
+    if(text === ""){
+
+        qrContainer.innerHTML = "<p>Please enter text or a URL.</p>";
+
+        return;
+
+    }
+
+    new QRCode(qrContainer,{
+
+        text:text,
+
+        width:220,
+
+        height:220
+
+    });
+
+    setTimeout(function(){
+
+        const img = qrContainer.querySelector("img");
+
+        const canvas = qrContainer.querySelector("canvas");
+
+        if(img){
+
+            downloadBtn.href = img.src;
+
+            downloadBtn.style.display = "inline-block";
+
+        }
+
+        else if(canvas){
+
+            downloadBtn.href = canvas.toDataURL("image/png");
+
+            downloadBtn.style.display = "inline-block";
+
+        }
+
+    },200);
+
+}
+
+generateBtn.addEventListener("click",generateQR);
+
+input.addEventListener("keyup",function(){
+
+    if(input.value.trim() !== ""){
+
+        generateQR();
+
+    }
+
+});
+
+clearBtn.addEventListener("click",function(){
+
+    input.value="";
+
+    qrContainer.innerHTML="";
+
+    downloadBtn.style.display="none";
+
+});
+
+</script>
+
+</body>
+
+</html>

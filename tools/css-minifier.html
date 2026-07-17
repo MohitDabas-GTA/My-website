@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CSS Minifier | DevNova</title>
+
+<meta name="description"
+content="Minify and compress CSS online for free using DevNova's CSS Minifier.">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/dark.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="container">
+
+<a href="../index.html" class="logo">
+
+<span>Dev</span>Nova
+
+</a>
+
+<nav class="navbar">
+
+<ul class="nav-links">
+
+<li><a href="../index.html">Home</a></li>
+
+<li><a href="../tutorials/index.html">Tutorials</a></li>
+
+<li><a href="index.html" class="active">Tools</a></li>
+
+<li><a href="../blog/index.html">Blog</a></li>
+
+<li><a href="../about.html">About</a></li>
+
+<li><a href="../contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="hero">
+
+<div class="container">
+
+<span class="hero-badge">
+
+🎨 Free Developer Tool
+
+</span>
+
+<h1>CSS Minifier</h1>
+
+<p>
+
+Remove unnecessary spaces, comments, and line breaks from your CSS to
+reduce file size and improve website performance.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="tool-card">
+
+<h2>CSS Minifier</h2>
+
+<label>Paste Your CSS</label>
+
+<textarea
+id="css-input"
+rows="16"
+placeholder="Paste your CSS code here..."></textarea>
+
+<br><br>
+
+<button
+class="btn primary-btn"
+id="minify-btn">
+
+Minify CSS
+
+</button>
+
+<button
+class="btn secondary-btn"
+id="copy-btn">
+
+Copy
+
+</button>
+
+<button
+class="btn secondary-btn"
+id="clear-btn">
+
+Clear
+
+</button>
+
+<br><br>
+
+<label>Minified CSS</label>
+
+<textarea
+id="css-output"
+rows="16"
+readonly
+placeholder="Minified CSS will appear here..."></textarea>
+
+<p id="status"></p>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==================================
+        INFORMATION
+===================================-->
+
+<section>
+
+<div class="container">
+
+<h2>What is CSS Minification?</h2>
+
+<p>
+
+CSS minification removes comments, unnecessary whitespace, and extra
+characters from your CSS without changing its functionality. Smaller CSS
+files load faster and improve website performance.
+
+</p>
+
+<div class="features-grid">
+
+<div class="feature-card">
+
+<h3>⚡ Faster Websites</h3>
+
+<p>Reduce CSS file size for faster page loading.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>📦 Smaller Files</h3>
+
+<p>Remove unnecessary spaces and comments.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>📋 Copy</h3>
+
+<p>Copy the minified CSS with one click.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>🆓 Free</h3>
+
+<p>Runs entirely in your browser.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+<div class="container">
+
+<p>
+
+© 2026 DevNova. All Rights Reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+<script>
+
+const input = document.getElementById("css-input");
+
+const output = document.getElementById("css-output");
+
+const status = document.getElementById("status");
+
+const minifyBtn = document.getElementById("minify-btn");
+
+const copyBtn = document.getElementById("copy-btn");
+
+const clearBtn = document.getElementById("clear-btn");
+
+minifyBtn.addEventListener("click", () => {
+
+    let css = input.value;
+
+    if(css.trim() === ""){
+
+        status.style.color = "red";
+
+        status.textContent = "Please enter CSS code.";
+
+        output.value = "";
+
+        return;
+
+    }
+
+    const originalSize = css.length;
+
+    css = css
+
+        .replace(/\/\*[\s\S]*?\*\//g, "")      // Remove comments
+
+        .replace(/\s+/g, " ")                  // Collapse whitespace
+
+        .replace(/\s*{\s*/g, "{")
+
+        .replace(/\s*}\s*/g, "}")
+
+        .replace(/\s*;\s*/g, ";")
+
+        .replace(/\s*:\s*/g, ":")
+
+        .replace(/\s*,\s*/g, ",")
+
+        .replace(/\s*>\s*/g, ">")
+
+        .replace(/\s*\+\s*/g, "+")
+
+        .replace(/\s*~\s*/g, "~")
+
+        .replace(/\s*!important/g, "!important")
+
+        .trim();
+
+    output.value = css;
+
+    const minifiedSize = css.length;
+
+    const saved = originalSize - minifiedSize;
+
+    status.style.color = "green";
+
+    status.innerHTML =
+
+        "✔ CSS Minified successfully<br>" +
+
+        "Original: <strong>" + originalSize + "</strong> characters | " +
+
+        "Minified: <strong>" + minifiedSize + "</strong> characters | " +
+
+        "Saved: <strong>" + saved + "</strong> characters";
+
+});
+
+copyBtn.addEventListener("click", () => {
+
+    if(output.value === "") return;
+
+    navigator.clipboard.writeText(output.value);
+
+    copyBtn.textContent = "Copied!";
+
+    setTimeout(() => {
+
+        copyBtn.textContent = "Copy";
+
+    },1500);
+
+});
+
+clearBtn.addEventListener("click", () => {
+
+    input.value = "";
+
+    output.value = "";
+
+    status.textContent = "";
+
+});
+
+</script>
+
+</body>
+
+</html>

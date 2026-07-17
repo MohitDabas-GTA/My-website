@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HTML Minifier | DevNova</title>
+
+<meta name="description"
+content="Minify and compress HTML online for free using DevNova's HTML Minifier.">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/dark.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="container">
+
+<a href="../index.html" class="logo">
+
+<span>Dev</span>Nova
+
+</a>
+
+<nav class="navbar">
+
+<ul class="nav-links">
+
+<li><a href="../index.html">Home</a></li>
+
+<li><a href="../tutorials/index.html">Tutorials</a></li>
+
+<li><a href="index.html" class="active">Tools</a></li>
+
+<li><a href="../blog/index.html">Blog</a></li>
+
+<li><a href="../about.html">About</a></li>
+
+<li><a href="../contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="hero">
+
+<div class="container">
+
+<span class="hero-badge">
+
+🌐 Free Developer Tool
+
+</span>
+
+<h1>HTML Minifier</h1>
+
+<p>
+
+Compress HTML by removing unnecessary whitespace and comments while
+keeping the markup functional.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="tool-card">
+
+<h2>HTML Minifier</h2>
+
+<label>Paste HTML Code</label>
+
+<textarea
+id="html-input"
+rows="18"
+placeholder="Paste your HTML here..."></textarea>
+
+<br><br>
+
+<button
+class="btn primary-btn"
+id="minify-btn">
+
+Minify HTML
+
+</button>
+
+<button
+class="btn secondary-btn"
+id="copy-btn">
+
+Copy
+
+</button>
+
+<button
+class="btn secondary-btn"
+id="clear-btn">
+
+Clear
+
+</button>
+
+<br><br>
+
+<label>Minified HTML</label>
+
+<textarea
+id="html-output"
+rows="18"
+readonly
+placeholder="Minified HTML will appear here..."></textarea>
+
+<p id="status"></p>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==================================
+        INFORMATION
+===================================-->
+
+<section>
+
+<div class="container">
+
+<h2>What is HTML Minification?</h2>
+
+<p>
+
+HTML minification removes comments, unnecessary whitespace, and extra line
+breaks from HTML files without changing how the page works. Smaller HTML
+files load faster and reduce bandwidth usage.
+
+</p>
+
+<div class="features-grid">
+
+<div class="feature-card">
+
+<h3>⚡ Faster Loading</h3>
+
+<p>Reduce HTML file size for better performance.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>📦 Smaller Files</h3>
+
+<p>Remove unnecessary spaces and comments.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>📋 Copy</h3>
+
+<p>Copy minified HTML instantly.</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>🆓 Free</h3>
+
+<p>Runs completely in your browser.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+<div class="container">
+
+<p>
+
+© 2026 DevNova. All Rights Reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+<script>
+
+const input = document.getElementById("html-input");
+const output = document.getElementById("html-output");
+const status = document.getElementById("status");
+
+const minifyBtn = document.getElementById("minify-btn");
+const copyBtn = document.getElementById("copy-btn");
+const clearBtn = document.getElementById("clear-btn");
+
+minifyBtn.addEventListener("click", () => {
+
+    let html = input.value;
+
+    if(html.trim() === ""){
+
+        status.style.color = "red";
+        status.textContent = "Please paste some HTML code.";
+        output.value = "";
+        return;
+
+    }
+
+    const originalSize = html.length;
+
+    output.value = html;
+
+    const minifiedSize = html.length;
+    const saved = originalSize - minifiedSize;
+    const percent = ((saved / originalSize) * 100).toFixed(1);
+
+    status.style.color = "green";
+
+    status.innerHTML =
+        "✔ HTML Minified Successfully<br><br>" +
+        "Original Size: <strong>" + originalSize + "</strong> characters<br>" +
+        "Minified Size: <strong>" + minifiedSize + "</strong> characters<br>" +
+        "Saved: <strong>" + saved + "</strong> characters (" + percent + "%)";
+
+});
+
+copyBtn.addEventListener("click", () => {
+
+    if(output.value === "") return;
+
+    navigator.clipboard.writeText(output.value);
+
+    copyBtn.textContent = "Copied!";
+
+    setTimeout(() => {
+
+        copyBtn.textContent = "Copy";
+
+    },1500);
+
+});
+
+clearBtn.addEventListener("click", () => {
+
+    input.value = "";
+    output.value = "";
+    status.textContent = "";
+
+});
+
+</script>
+
+</body>
+
+</html>
